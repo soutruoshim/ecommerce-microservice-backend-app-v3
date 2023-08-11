@@ -1,9 +1,9 @@
 package com.selimhorri.app.resource;
 
-import javax.validation.Valid;
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
 
+import jakarta.validation.Valid;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -47,7 +47,7 @@ public class VerificationTokenResource {
 	@PostMapping
 	public ResponseEntity<VerificationTokenDto> save(
 			@RequestBody 
-			@NotNull(message = "Input must not NULL") 
+			@NotNull(message = "Input must not NULL")
 			@Valid final VerificationTokenDto verificationTokenDto) {
 		log.info("*** VerificationTokenDto, resource; save verificationToken *");
 		return ResponseEntity.ok(this.verificationTokenService.save(verificationTokenDto));
@@ -65,7 +65,7 @@ public class VerificationTokenResource {
 	@PutMapping("/{verificationTokenId}")
 	public ResponseEntity<VerificationTokenDto> update(
 			@PathVariable("verificationTokenId") 
-			@NotBlank(message = "Input must not blank") final String verificationTokenId, 
+			@NotBlank(message = "Input must not blank") final String verificationTokenId,
 			@RequestBody 
 			@NotNull(message = "Input must not NULL") 
 			@Valid final VerificationTokenDto verificationTokenDto) {

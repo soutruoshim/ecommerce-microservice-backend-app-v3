@@ -1,9 +1,7 @@
 package com.selimhorri.app.resource;
 
-import javax.validation.Valid;
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
-
+import jakarta.validation.Valid;
+import jakarta.validation.constraints.*;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -38,7 +36,7 @@ public class CategoryResource {
 	@GetMapping("/{categoryId}")
 	public ResponseEntity<CategoryDto> findById(
 			@PathVariable("categoryId") 
-			@NotBlank(message = "Input must not be blank") 
+			@NotBlank(message = "Input must not be blank")
 			@Valid final String categoryId) {
 		log.info("*** CategoryDto, resource; fetch category by id *");
 		return ResponseEntity.ok(this.categoryService.findById(Integer.parseInt(categoryId)));

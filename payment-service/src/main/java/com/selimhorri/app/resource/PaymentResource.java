@@ -1,9 +1,8 @@
 package com.selimhorri.app.resource;
 
-import javax.validation.Valid;
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
-
+import jakarta.validation.Valid;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -38,7 +37,7 @@ public class PaymentResource {
 	@GetMapping("/{paymentId}")
 	public ResponseEntity<PaymentDto> findById(
 			@PathVariable("paymentId") 
-			@NotBlank(message = "Input must not be blank") 
+			@NotBlank(message = "Input must not be blank")
 			@Valid final String paymentId) {
 		log.info("*** PaymentDto, resource; fetch payment by id *");
 		return ResponseEntity.ok(this.paymentService.findById(Integer.parseInt(paymentId)));
@@ -47,7 +46,7 @@ public class PaymentResource {
 	@PostMapping
 	public ResponseEntity<PaymentDto> save(
 			@RequestBody 
-			@NotNull(message = "Input must not be NULL") 
+			@NotNull(message = "Input must not be NULL")
 			@Valid final PaymentDto paymentDto) {
 		log.info("*** PaymentDto, resource; save payment *");
 		return ResponseEntity.ok(this.paymentService.save(paymentDto));

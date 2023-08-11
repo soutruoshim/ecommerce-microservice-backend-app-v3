@@ -1,9 +1,9 @@
 package com.selimhorri.app.resource;
 
-import javax.validation.Valid;
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
 
+import jakarta.validation.Valid;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -38,7 +38,7 @@ public class AddressResource {
 	@GetMapping("/{addressId}")
 	public ResponseEntity<AddressDto> findById(
 			@PathVariable("addressId") 
-			@NotBlank(message = "Input must not blank") 
+			@NotBlank(message = "Input must not blank")
 			@Valid final String addressId) {
 		log.info("*** AddressDto, resource; fetch address by id *");
 		return ResponseEntity.ok(this.addressService.findById(Integer.parseInt(addressId.strip())));
@@ -47,7 +47,7 @@ public class AddressResource {
 	@PostMapping
 	public ResponseEntity<AddressDto> save(
 			@RequestBody 
-			@NotNull(message = "Input must not NULL") 
+			@NotNull(message = "Input must not NULL")
 			@Valid final AddressDto addressDto) {
 		log.info("*** AddressDto, resource; save address *");
 		return ResponseEntity.ok(this.addressService.save(addressDto));

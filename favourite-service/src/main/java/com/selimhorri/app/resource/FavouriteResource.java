@@ -3,9 +3,8 @@ package com.selimhorri.app.resource;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
-import javax.validation.Valid;
-import javax.validation.constraints.NotNull;
-
+import jakarta.validation.Valid;
+import jakarta.validation.constraints.NotNull;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -62,7 +61,7 @@ public class FavouriteResource {
 	@PostMapping
 	public ResponseEntity<FavouriteDto> save(
 			@RequestBody 
-			@NotNull(message = "Input must not be NULL") 
+			@NotNull(message = "Input must not be NULL")
 			@Valid final FavouriteDto favouriteDto) {
 		log.info("*** FavouriteDto, resource; save favourite *");
 		return ResponseEntity.ok(this.favouriteService.save(favouriteDto));

@@ -2,14 +2,8 @@ package com.selimhorri.app.domain;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;
-
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.IdClass;
-import javax.persistence.Table;
-
 import org.springframework.format.annotation.DateTimeFormat;
+import jakarta.persistence.*;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonFormat.Shape;
@@ -25,7 +19,6 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
-
 @Entity
 @Table(name = "favourites")
 @IdClass(FavouriteId.class)

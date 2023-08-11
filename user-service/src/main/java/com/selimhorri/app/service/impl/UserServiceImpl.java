@@ -3,8 +3,7 @@ package com.selimhorri.app.service.impl;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import javax.transaction.Transactional;
-
+import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Service;
 
 import com.selimhorri.app.dto.UserDto;

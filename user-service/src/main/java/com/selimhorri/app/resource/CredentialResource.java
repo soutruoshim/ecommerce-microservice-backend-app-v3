@@ -1,9 +1,10 @@
 package com.selimhorri.app.resource;
 
-import javax.validation.Valid;
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
 
+
+import jakarta.validation.Valid;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -38,7 +39,7 @@ public class CredentialResource {
 	@GetMapping("/{credentialId}")
 	public ResponseEntity<CredentialDto> findById(
 			@PathVariable("credentialId") 
-			@NotBlank(message = "Input must not blank") 
+			@NotBlank(message = "Input must not blank")
 			@Valid final String credentialId) {
 		log.info("*** CredentialDto, resource; fetch credential by id *");
 		return ResponseEntity.ok(this.credentialService.findById(Integer.parseInt(credentialId.strip())));
@@ -47,7 +48,7 @@ public class CredentialResource {
 	@PostMapping
 	public ResponseEntity<CredentialDto> save(
 			@RequestBody 
-			@NotNull(message = "Input must not NULL") 
+			@NotNull(message = "Input must not NULL")
 			@Valid final CredentialDto credentialDto) {
 		log.info("*** CredentialDto, resource; save credential *");
 		return ResponseEntity.ok(this.credentialService.save(credentialDto));

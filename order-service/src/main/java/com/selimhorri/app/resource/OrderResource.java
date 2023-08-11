@@ -1,9 +1,8 @@
 package com.selimhorri.app.resource;
 
-import javax.validation.Valid;
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
-
+import jakarta.validation.Valid;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -38,7 +37,7 @@ public class OrderResource {
 	@GetMapping("/{orderId}")
 	public ResponseEntity<OrderDto> findById(
 			@PathVariable("orderId") 
-			@NotBlank(message = "Input must not be blank") 
+			@NotBlank(message = "Input must not be blank")
 			@Valid final String orderId) {
 		log.info("*** OrderDto, resource; fetch order by id *");
 		return ResponseEntity.ok(this.orderService.findById(Integer.parseInt(orderId)));
@@ -47,7 +46,7 @@ public class OrderResource {
 	@PostMapping
 	public ResponseEntity<OrderDto> save(
 			@RequestBody 
-			@NotNull(message = "Input must not be NULL") 
+			@NotNull(message = "Input must not be NULL")
 			@Valid final OrderDto orderDto) {
 		log.info("*** OrderDto, resource; save order *");
 		return ResponseEntity.ok(this.orderService.save(orderDto));

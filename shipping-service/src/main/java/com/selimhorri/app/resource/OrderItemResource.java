@@ -1,8 +1,7 @@
 package com.selimhorri.app.resource;
 
-import javax.validation.Valid;
-import javax.validation.constraints.NotNull;
-
+import jakarta.validation.Valid;
+import jakarta.validation.constraints.NotNull;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -47,7 +46,7 @@ public class OrderItemResource {
 	@GetMapping("/find")
 	public ResponseEntity<OrderItemDto> findById(
 			@RequestBody 
-			@NotNull(message = "Input must not be NULL") 
+			@NotNull(message = "Input must not be NULL")
 			@Valid final OrderItemId orderItemId) {
 		log.info("*** OrderItemDto, resource; fetch orderItem by id *");
 		return ResponseEntity.ok(this.orderItemService.findById(orderItemId));

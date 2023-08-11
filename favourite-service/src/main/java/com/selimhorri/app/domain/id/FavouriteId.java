@@ -3,8 +3,7 @@ package com.selimhorri.app.domain.id;
 import java.io.Serializable;
 import java.time.LocalDateTime;
 
-import javax.validation.constraints.NotNull;
-
+import jakarta.validation.constraints.NotNull;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import com.fasterxml.jackson.annotation.JsonFormat;

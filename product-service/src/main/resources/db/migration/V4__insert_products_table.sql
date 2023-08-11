@@ -1,4 +1,3 @@
-
 INSERT INTO products
 (category_id, product_title, image_url, sku, price_unit, quantity) VALUES
 (1, 'asus', 'xxx', 'dfqejklejrkn', 0, 50),
