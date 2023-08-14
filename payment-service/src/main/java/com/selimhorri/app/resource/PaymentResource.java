@@ -67,9 +67,6 @@ public class PaymentResource {
 		this.paymentService.deleteById(Integer.parseInt(paymentId));
 		return ResponseEntity.ok(true);
 	}
-	
-	
-	
 }
 
 

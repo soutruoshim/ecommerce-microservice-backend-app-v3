@@ -6,7 +6,7 @@ CREATE TABLE products (
 	sku VARCHAR(255),
 	price_unit DECIMAL(7, 2),
 	quantity INT,
-	created_at TIMESTAMP DEFAULT LOCALTIMESTAMP NOT NULL,
+	created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP NULL,
 	updated_at TIMESTAMP
 );
 

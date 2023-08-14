@@ -4,6 +4,6 @@ CREATE TABLE categories (
 	parent_category_id INT,
 	category_title VARCHAR(255),
 	image_url VARCHAR(255),
-	created_at TIMESTAMP DEFAULT LOCALTIMESTAMP NOT NULL,
+	created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP NULL,
 	updated_at TIMESTAMP
 );

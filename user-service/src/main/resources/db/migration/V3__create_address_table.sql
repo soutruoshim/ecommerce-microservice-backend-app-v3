@@ -5,7 +5,7 @@ CREATE TABLE address (
 	full_address VARCHAR(255),
 	postal_code VARCHAR(255),
 	city VARCHAR(255),
-	created_at TIMESTAMP DEFAULT LOCALTIMESTAMP NOT NULL,
+	created_at TIMESTAMP DEFAULT LOCALTIMESTAMP NULL,
 	updated_at TIMESTAMP
 );
 

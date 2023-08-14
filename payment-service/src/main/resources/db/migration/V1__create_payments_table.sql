@@ -4,7 +4,7 @@ CREATE TABLE payments (
 	order_id INT,
 	is_payed BOOLEAN,
 	payment_status VARCHAR(255),
-	created_at TIMESTAMP DEFAULT LOCALTIMESTAMP NOT NULL,
+	created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP NULL,
 	updated_at TIMESTAMP
 );
 
