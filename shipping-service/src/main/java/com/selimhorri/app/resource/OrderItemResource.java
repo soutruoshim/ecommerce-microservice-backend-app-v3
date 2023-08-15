@@ -88,9 +88,6 @@ public class OrderItemResource {
 		this.orderItemService.deleteById(orderItemId);
 		return ResponseEntity.ok(true);
 	}
-	
-	
-	
 }
 
 
